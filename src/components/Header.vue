@@ -1,9 +1,7 @@
 <template>
-
+  <header>CAN YOU GUESS IT?</header>
 </template>
 
-<style scoped>
-</style>
+<style scoped></style>
 
-<script setup>
-</script>
+<script setup></script>
