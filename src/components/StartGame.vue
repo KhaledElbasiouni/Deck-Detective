@@ -37,6 +37,8 @@
 <style scoped>
 .card {
   width: 50%;
+  padding-top: 50px;
+  padding-bottom: 50px;
 }
 
 .card-header,
@@ -50,13 +52,32 @@
   margin-right: 100px;
   text-align: left;
 }
+
+li {
+  margin-bottom: 15px;
+}
+
+ol {
+  margin: 20px 0;
+}
+
+button {
+  background: linear-gradient(to right, #dc3545 0%, #dc3545 25%, black 75%, black 100%);
+  border: none;
+}
+button:hover {
+  background: linear-gradient(to right, black 0%, black 25%, #dc3545 75%, #dc3545 100%);
+}
 </style>
 
 <script setup>
 import { gameStatesStore } from "../stores/gameStates";
+import { cardStore } from "../stores/card";
 const stateStore = gameStatesStore();
+const cStore = cardStore();
 
 function startGame() {
   stateStore.advanceState();
+  cStore.getNewDeck();
 }
 </script>

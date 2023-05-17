@@ -35,7 +35,7 @@
 .content {
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  height: 100vh;
 }
 </style>
 
@@ -64,7 +64,7 @@ async function getNewDeck() {
     }
     let responseJSON = await response.json();
     newDeck.value = responseJSON;
-    console.log(responseJSON);
+    // console.log(responseJSON);
     deckId.value = newDeck.value.deck_id;
     canFetch.value = true;
   } catch (error) {
@@ -85,4 +85,6 @@ async function drawCard() {
     console.error(error);
   }
 }
+
+watch(cardImageUrl, () => console.log(cardImageUrl.value));
 </script>
