@@ -8,8 +8,8 @@ const Labels = {
   clubs: "CLUBS",
   hearts: "HEARTS",
   diamonds: "DIAMONDS",
-  black: "black",
-  red: "red",
+  black: "Black",
+  red: "Red",
 };
 
 export default Labels;

@@ -19,6 +19,7 @@ header {
 
 img {
   width: 8em;
+  height: 8em;
 }
 </style>
 

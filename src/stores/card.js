@@ -2,8 +2,8 @@ import { ref, computed } from "vue";
 import { defineStore } from "pinia";
 import Labels from "../Labels.js";
 
-const GET_DECK_API_URL = "https://www.deckofcardsapi.com/api/deck/new/";
-let DRAW_CARD_API_URL = "";
+const GET_DECK_API_URL =
+  "https://www.deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1";
 
 const cardColorMap = {
   [Labels.spades]: Labels.black,
@@ -11,6 +11,7 @@ const cardColorMap = {
   [Labels.hearts]: Labels.red,
   [Labels.diamonds]: Labels.red,
 };
+
 export const cardStore = defineStore("cardStore", {
   state: () => ({
     card: undefined,

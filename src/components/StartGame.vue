@@ -15,7 +15,7 @@
           not you will be given the option to restart the game with a fresh deck of cards.
         </li>
         <li>
-          First, you will be asked to guess whether or not the next card will be a Red or
+          First, you will be asked to guess whether or not the next card will be Red or
           Black.
         </li>
         <li>
@@ -62,11 +62,12 @@ ol {
 }
 
 button {
-  background: linear-gradient(to right, #dc3545 0%, #dc3545 25%, black 75%, black 100%);
+  background: #010b14;
   border: none;
+  padding: 20px;
 }
 button:hover {
-  background: linear-gradient(to right, black 0%, black 25%, #dc3545 75%, #dc3545 100%);
+  background: #c50720;
 }
 </style>
 
@@ -76,8 +77,9 @@ import { cardStore } from "../stores/card";
 const stateStore = gameStatesStore();
 const cStore = cardStore();
 
+cStore.getNewDeck();
+
 function startGame() {
   stateStore.advanceState();
-  cStore.getNewDeck();
 }
 </script>

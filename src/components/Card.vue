@@ -1,9 +1,16 @@
 <template>
-  <div class="card text-bg-dark">
+  <div class="card">
     <img
       draggable="false"
-      :src="props.imgSrc"
+      :src="imgSrc"
       class="card-img"
+      onerror="this.style.display='none'"
+    />
+    <img
+      v-if="!showCard"
+      draggable="false"
+      src="@/assets/card-placeholder.png"
+      class="card-img card-placeholder"
       onerror="this.style.display='none'"
     />
   </div>
@@ -11,11 +18,19 @@
 
 <style scoped>
 .card-img {
-  user-select: none;
   cursor: pointer;
+  z-index: 1;
 }
 .card {
   border: none;
+  user-select: none;
+  width: 220px;
+  height: 300px;
+}
+
+.card-placeholder {
+  z-index: 2;
+  position: absolute;
 }
 </style>
 
@@ -24,6 +39,5 @@ import { gameStatesStore } from "../stores/gameStates";
 import { ref } from "vue";
 const stateStore = gameStatesStore();
 
-const props = defineProps({ imgSrc: String });
-let loading = ref(true);
+const props = defineProps({ imgSrc: String, showCard: Boolean });
 </script>
