@@ -20,6 +20,7 @@ export const cardStore = defineStore("cardStore", {
     deck: undefined,
     deckId: undefined,
     canDraw: false,
+    firstCardRank: undefined,
   }),
   getters: {
     cardUrl(state) {
@@ -34,6 +35,9 @@ export const cardStore = defineStore("cardStore", {
       } else {
         return Labels.red;
       }
+    },
+    cardRank(state) {
+      return state.cardCode[0];
     },
   },
   actions: {
@@ -68,6 +72,9 @@ export const cardStore = defineStore("cardStore", {
           console.log(responseJSON);
           this.cardImageUrl = responseJSON.cards[0].images.png;
           // console.log(responseJSON.cards[0].suit);
+          if (this.firstCardRank) {
+            this.firstCardRank = this.card.cards[0].code[0];
+          }
         } catch (error) {
           console.error(error);
         }

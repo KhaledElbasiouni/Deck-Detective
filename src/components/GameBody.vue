@@ -2,6 +2,9 @@
   <div class="gameBody">
     <GameStart v-if="stateStore.currentState === Labels.startState"></GameStart>
     <GuessColor v-if="stateStore.currentState === Labels.guessColorState"></GuessColor>
+    <GuessHigherLower
+      v-if="stateStore.currentState === Labels.guessHigherOrLowerState"
+    ></GuessHigherLower>
   </div>
 </template>
 
@@ -17,10 +20,11 @@
 
 <script setup>
 import GameStart from "./GameStart.vue";
+import GuessColor from "./GuessColor.vue";
+import GuessHigherLower from "./GuessHigherLower.vue";
 import Labels from "@/Labels.js";
 import { gameStatesStore } from "../stores/gameStates";
 import { storeToRefs } from "pinia";
-import GuessColor from "./GuessColor.vue";
 
 const stateStore = gameStatesStore();
 let { gameStarted } = storeToRefs(stateStore);

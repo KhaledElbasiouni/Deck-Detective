@@ -14,6 +14,8 @@ const Labels = {
   continue: "Continue",
   correctGuess: "Correct! Nice Guess! Think You Can Do It Again?",
   incorrectGuess: "Oops! That's Incorrect :( Better Luck Next Time!",
+  higher: "Higher",
+  lower: "Lower",
 };
 
 export default Labels;

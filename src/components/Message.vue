@@ -40,11 +40,11 @@ button.restart {
   background: #c50720;
 }
 button.continue {
-  background: #3980d0;
-}
-button:hover {
   background: #010b14;
 }
+/* button:hover {
+  background: #010b14;
+} */
 </style>
 
 <script setup>
