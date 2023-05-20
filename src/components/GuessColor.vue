@@ -66,19 +66,24 @@
   flex-direction: column;
   align-items: center;
 }
+
 svg {
-  height: 75px;
-  width: 75px;
+  height: 50px;
+  width: 50px;
+  display: relative;
+  z-index: 1;
 }
 .options {
   display: flex;
-  gap: 100px;
-  margin-top: 150px;
+  gap: 80px;
+  margin-top: 100px;
 }
 
 button {
-  width: 200px;
-  height: 200px;
+  width: 120px;
+  height: 120px;
+  position: relative;
+  z-index: 3;
 }
 
 #pickBlack {
@@ -89,7 +94,6 @@ button {
 }
 #pickRed:disabled,
 #pickBlack:disabled {
-  /* opacity: 1; */
   cursor: not-allowed;
   pointer-events: all !important;
 }
@@ -97,7 +101,7 @@ button {
 #pickBlack,
 #pickRed {
   color: white;
-  font-size: 20px;
+  font-size: 18px;
 }
 .svgDiv svg {
   flex-shrink: 0;
@@ -111,10 +115,6 @@ button {
 .blackDiv:hover .svgDiv,
 .redDiv:hover .svgDiv {
   transform: translateY(-130%);
-}
-
-.stop-transform {
-  transform: none !important;
 }
 </style>
 

@@ -24,8 +24,9 @@
 .card {
   border: none;
   user-select: none;
-  width: 220px;
-  height: 300px;
+  width: 180px;
+  height: 260px;
+  background-color: #efeee6;
 }
 
 .card-placeholder {

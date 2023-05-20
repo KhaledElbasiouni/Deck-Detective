@@ -1,6 +1,6 @@
 <template>
   <header>
-    <h1>{{ Labels.title }}</h1>
+    <h2>{{ Labels.title }}</h2>
     <img draggable="false" src="../assets/cardslogo.png" alt="image of 4 playing cards" />
   </header>
 </template>
@@ -18,8 +18,8 @@ header {
 }
 
 img {
-  width: 8em;
-  height: 8em;
+  width: 6em;
+  height: 6em;
 }
 </style>
 

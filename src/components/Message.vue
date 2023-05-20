@@ -1,6 +1,6 @@
 <template>
   <div class="user-message">
-    <h2>{{ correctIncorrectMessage }}</h2>
+    <h3>{{ correctIncorrectMessage }}</h3>
     <div class="msg-buttons">
       <button
         @click="restartGame"
@@ -33,8 +33,8 @@
 button {
   border: none;
   padding: 20px;
-  width: 150px;
-  font-size: 1.15em;
+  width: 100px;
+  font-size: 1em;
 }
 button.restart {
   background: #c50720;

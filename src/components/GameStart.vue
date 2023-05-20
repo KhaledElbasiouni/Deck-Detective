@@ -37,8 +37,8 @@
 <style scoped>
 .card {
   width: 50%;
-  padding-top: 50px;
-  padding-bottom: 50px;
+  padding-top: 35px;
+  padding-bottom: 35px;
 }
 
 .card-header,
@@ -58,13 +58,13 @@ li {
 }
 
 ol {
-  margin: 20px 0;
+  margin: 10px 0;
 }
 
 button {
   background: #010b14;
   border: none;
-  padding: 20px;
+  padding: 15px;
 }
 button:hover {
   background: #c50720;
