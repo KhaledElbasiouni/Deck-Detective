@@ -1,6 +1,6 @@
 <template>
   <div class="gameBody">
-    <StartGame v-if="stateStore.currentState === Labels.startState"></StartGame>
+    <GameStart v-if="stateStore.currentState === Labels.startState"></GameStart>
     <GuessColor v-if="stateStore.currentState === Labels.guessColorState"></GuessColor>
   </div>
 </template>
@@ -9,15 +9,14 @@
 .gameBody {
   flex-grow: 1;
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
-  /* border: solid 1px red; */
+  align-items: center;
+  margin-top: 40px;
 }
 </style>
 
 <script setup>
-import StartGame from "./StartGame.vue";
+import GameStart from "./GameStart.vue";
 import Labels from "@/Labels.js";
 import { gameStatesStore } from "../stores/gameStates";
 import { storeToRefs } from "pinia";

@@ -1,6 +1,6 @@
 <template>
   <div class="shadow-lg card text-center">
-    <h3 class="card-header">Here's how the game works...</h3>
+    <h2 class="card-header">Here's how the game works...</h2>
     <div class="card-body">
       <ol class="ruleList">
         <li>

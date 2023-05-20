@@ -28,14 +28,18 @@ export const cardStore = defineStore("cardStore", {
     getCardImageUrl(state) {
       return state.cardImageUrl;
     },
+    cardColor(state) {
+      if (state.cardCode[1] === "S" || state.cardCode[1] === "C") {
+        return Labels.black;
+      } else {
+        return Labels.red;
+      }
+    },
   },
   actions: {
-    // Need to reset canDraw when game resets
-    // Ideas:
-    // Access this store within the gameState store and reset it there
-    // OR
-    // Access this store within the component that will have the reset game button
-    // then call reset action functions for both stores within a function there
+    clearDeck() {
+      this.$reset();
+    },
     async getNewDeck() {
       try {
         const response = await fetch(GET_DECK_API_URL);
@@ -60,6 +64,7 @@ export const cardStore = defineStore("cardStore", {
           }
           let responseJSON = await response.json();
           this.card = responseJSON;
+          this.cardCode = responseJSON.cards[0].code;
           console.log(responseJSON);
           this.cardImageUrl = responseJSON.cards[0].images.png;
           // console.log(responseJSON.cards[0].suit);

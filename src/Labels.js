@@ -10,6 +10,10 @@ const Labels = {
   diamonds: "DIAMONDS",
   black: "Black",
   red: "Red",
+  restart: "Restart",
+  continue: "Continue",
+  correctGuess: "Correct! Nice Guess! Think You Can Do It Again?",
+  incorrectGuess: "Oops! That's Incorrect :( Better Luck Next Time!",
 };
 
 export default Labels;

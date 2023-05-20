@@ -1,5 +1,5 @@
 <template>
-  <Card :showCard="cardDrawn" :imgSrc="cardStoreInst.getCardImageUrl"></Card>
+  <Card :showCard="cardDrawn" :imgSrc="cStore.getCardImageUrl"></Card>
   <div class="options">
     <div class="blackDiv">
       <div v-if="!cardDrawn" class="svgDiv">
@@ -16,7 +16,7 @@
       </div>
       <button
         :disabled="cardDrawn"
-        @click="showCard"
+        @click="pickColor(Labels.black)"
         id="pickBlack"
         type="button"
         class="shadow-lg btn"
@@ -40,7 +40,7 @@
       </div>
       <button
         :disabled="cardDrawn"
-        @click="showCard"
+        @click="pickColor(Labels.red)"
         id="pickRed"
         type="button"
         class="shadow-lg btn"
@@ -49,6 +49,7 @@
       </button>
     </div>
   </div>
+  <Message v-if="cardDrawn" :correctIncorrectMessage="userMessage"></Message>
 </template>
 
 <style scoped>
@@ -121,16 +122,23 @@ button {
 import { gameStatesStore } from "../stores/gameStates";
 import { cardStore } from "../stores/card";
 import Card from "./Card.vue";
+import Message from "./Message.vue";
 import { ref, onMounted, onBeforeMount, nextTick } from "vue";
 import Labels from "../Labels";
 
 const stateStore = gameStatesStore();
-const cardStoreInst = cardStore();
-cardStoreInst.drawCard();
+const cStore = cardStore();
+cStore.drawCard();
 
+let userMessage = ref("");
 let cardDrawn = ref(false);
 
-function showCard() {
+function pickColor(colorPicked) {
+  if (cStore.cardColor === colorPicked) {
+    userMessage = Labels.correctGuess;
+  } else {
+    userMessage = Labels.incorrectGuess;
+  }
   cardDrawn.value = true;
 }
 </script>
