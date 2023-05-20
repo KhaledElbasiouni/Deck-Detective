@@ -37,7 +37,13 @@ export const cardStore = defineStore("cardStore", {
       }
     },
     cardRank(state) {
+      if (state.cardCode[0] === "0") {
+        return "10";
+      }
       return state.cardCode[0];
+    },
+    cardSuit(state) {
+      return state.cardCode[1];
     },
   },
   actions: {
@@ -52,6 +58,7 @@ export const cardStore = defineStore("cardStore", {
         }
         let responseJSON = await response.json();
         this.deck = responseJSON;
+        console.log("Deck: ");
         console.log(responseJSON);
         this.deckId = this.deck.deck_id;
         this.canDraw = true;
@@ -69,11 +76,13 @@ export const cardStore = defineStore("cardStore", {
           let responseJSON = await response.json();
           this.card = responseJSON;
           this.cardCode = responseJSON.cards[0].code;
+          console.log("Card: ");
           console.log(responseJSON);
-          this.cardImageUrl = responseJSON.cards[0].images.png;
+          console.log("Card code:" + this.card.cards[0].code);
+          this.cardImageUrl = responseJSON.cards[0].image;
           // console.log(responseJSON.cards[0].suit);
-          if (this.firstCardRank) {
-            this.firstCardRank = this.card.cards[0].code[0];
+          if (this.firstCardRank === undefined) {
+            this.firstCardRank = this.cardRank;
           }
         } catch (error) {
           console.error(error);

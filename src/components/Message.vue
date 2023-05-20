@@ -56,8 +56,6 @@ const props = defineProps({ correctIncorrectMessage: String });
 const stateStore = gameStatesStore();
 const cStore = cardStore();
 
-cStore.getNewDeck();
-
 function nextLevel() {
   stateStore.advanceState();
 }

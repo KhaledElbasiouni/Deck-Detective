@@ -5,7 +5,7 @@ const gameStates = [
   Labels.startState,
   Labels.guessColorState,
   Labels.guessHigherOrLowerState,
-  Labels.guessRankState,
+  Labels.guessSuitState,
 ];
 
 export const gameStatesStore = defineStore("gameStatesStore", {

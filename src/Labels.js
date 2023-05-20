@@ -2,12 +2,15 @@ const Labels = {
   title: "CAN YOU GUESS THE CARD?",
   startState: "startState",
   guessColorState: "guessColorState",
+  guessColorPrompt: "Is the next card Black or Red?",
   guessHigherOrLowerState: "guessHigherOrLowerState",
-  guessRankState: "guessRankState",
-  spades: "SPADES",
-  clubs: "CLUBS",
-  hearts: "HEARTS",
-  diamonds: "DIAMONDS",
+  guessHigherOrLowerPrompt: "WIll the next card be higher or lower than the last one?",
+  guessSuitState: "guessSuitState",
+  guessSuitPrompt: "What suit do you think the next card belongs to?",
+  spades: "S",
+  clubs: "C",
+  hearts: "H",
+  diamonds: "D",
   black: "Black",
   red: "Red",
   restart: "Restart",
@@ -16,6 +19,7 @@ const Labels = {
   incorrectGuess: "Oops! That's Incorrect :( Better Luck Next Time!",
   higher: "Higher",
   lower: "Lower",
+  equal: "Equal",
 };
 
 export default Labels;
