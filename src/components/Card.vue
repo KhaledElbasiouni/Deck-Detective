@@ -18,7 +18,6 @@
 
 <style scoped>
 .card-img {
-  cursor: pointer;
   z-index: 1;
 }
 .card {

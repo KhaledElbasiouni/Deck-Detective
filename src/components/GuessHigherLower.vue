@@ -29,7 +29,7 @@
 path {
   cursor: pointer;
 }
-.svg-arrow pathpath:not(.disabled):hover {
+.svg-arrow path:not(.disabled):hover {
   fill: #c50720;
 }
 
