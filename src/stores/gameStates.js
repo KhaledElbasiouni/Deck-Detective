@@ -14,6 +14,7 @@ export const gameStatesStore = defineStore("gameStatesStore", {
     score: 0,
     gamesWon: 0,
     gameStarted: false,
+    gameOver: false,
   }),
   getters: {
     currentState(state) {
@@ -28,6 +29,7 @@ export const gameStatesStore = defineStore("gameStatesStore", {
       this.gameStarted = false;
       this.stateNumber = 0;
       this.score = 0;
+      this.gameOver = false;
     },
 
     advanceState() {
@@ -35,8 +37,11 @@ export const gameStatesStore = defineStore("gameStatesStore", {
       this.stateNumber++;
     },
     increaseScore() {
-      this.score++;
-      if (this.score === 3) {
+      if (this.score < 3) {
+        this.score++;
+      }
+      if (this.score === 3 && !this.gameOver) {
+        this.gameOver = true;
         this.gamesWon++;
       }
     },

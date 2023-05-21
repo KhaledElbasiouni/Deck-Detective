@@ -5,22 +5,15 @@ import Labels from "../Labels.js";
 const GET_DECK_API_URL =
   "https://www.deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1";
 
-const cardColorMap = {
-  [Labels.spades]: Labels.black,
-  [Labels.clubs]: Labels.black,
-  [Labels.hearts]: Labels.red,
-  [Labels.diamonds]: Labels.red,
-};
-
 export const cardStore = defineStore("cardStore", {
   state: () => ({
-    card: undefined,
+    card: {},
     cardImageUrl: undefined,
-    cardCode: undefined,
-    deck: undefined,
-    deckId: undefined,
+    cardCode: "",
+    deck: {},
+    deckId: "",
     canDraw: false,
-    firstCardRank: undefined,
+    firstCardRank: "",
   }),
   getters: {
     cardUrl(state) {
@@ -79,9 +72,9 @@ export const cardStore = defineStore("cardStore", {
           console.log("Card: ");
           console.log(responseJSON);
           console.log("Card code:" + this.card.cards[0].code);
-          this.cardImageUrl = responseJSON.cards[0].image;
+          this.cardImageUrl = responseJSON.cards[0].images.png;
           // console.log(responseJSON.cards[0].suit);
-          if (this.firstCardRank === undefined) {
+          if (!this.firstCardRank) {
             this.firstCardRank = this.cardRank;
           }
         } catch (error) {

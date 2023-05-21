@@ -4,7 +4,7 @@
       draggable="false"
       :src="imgSrc"
       class="card-img"
-      onerror="this.style.display='none'"
+      onerror="console.log('Error')"
     />
     <img
       v-if="!showCard"
@@ -36,7 +36,6 @@
 
 <script setup>
 import { gameStatesStore } from "../stores/gameStates";
-import { ref } from "vue";
 const stateStore = gameStatesStore();
 
 const props = defineProps({ imgSrc: String, showCard: Boolean });

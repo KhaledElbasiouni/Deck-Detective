@@ -93,17 +93,19 @@ path {
   transform: scale(1.2);
 }
 
+.card-header,
+.congrats-card {
+  border: none;
+  background-color: #fff;
+}
 .congrats-card {
   width: 50%;
   padding-top: 35px;
   padding-bottom: 35px;
+  margin-top: 60px;
   position: absolute;
   z-index: 4;
-}
-.card-header,
-.card {
-  border: none;
-  background-color: #fff;
+  border: solid 4px gold;
 }
 button {
   background: #c50720;

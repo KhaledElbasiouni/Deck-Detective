@@ -135,10 +135,10 @@ let cardDrawn = ref(false);
 
 function pickColor(colorPicked) {
   if (cStore.cardColor === colorPicked) {
-    userMessage = Labels.correctGuess;
+    userMessage.value = Labels.correctGuess;
     stateStore.increaseScore();
   } else {
-    userMessage = Labels.incorrectGuess;
+    userMessage.value = Labels.incorrectGuess;
   }
   cardDrawn.value = true;
 }
