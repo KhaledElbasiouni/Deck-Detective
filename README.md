@@ -1,14 +1,13 @@
-# FrontendChallenge
+# FrontendChallenge - Guess The Card
 
-This template should help get you started developing with Vue 3 in Vite.
+This project was made using Vue 3 using the Composition API and Pinia.
+It was created using a build setup based on Vite.
 
-## Recommended IDE Setup
+The aim of the project was to meet all the requirements set by the [OutStem Front-end Challenge](https://github.com/AES-Outreach/Fall-2023-Coop-Interviews).
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+The player will start the game with a shuffled deck of cards and must give their best guess about each of the next 3 cards to be drawn. I chose not to limit the player by forcing them to restart after each incorrect guess. Instead, they are allowed to continue and can keep track of their score and games won.
 
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+You can check the project out [here](https://khaledelbasiouni.github.io/FrontendChallenge/). Hosted on Github Pages.
 
 ## Project Setup
 
