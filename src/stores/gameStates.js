@@ -11,6 +11,8 @@ const gameStates = [
 export const gameStatesStore = defineStore("gameStatesStore", {
   state: () => ({
     stateNumber: 0,
+    score: 0,
+    gamesWon: 0,
     gameStarted: false,
   }),
   getters: {
@@ -25,11 +27,18 @@ export const gameStatesStore = defineStore("gameStatesStore", {
     restartGame() {
       this.gameStarted = false;
       this.stateNumber = 0;
+      this.score = 0;
     },
 
     advanceState() {
       this.gameStarted = true;
       this.stateNumber++;
+    },
+    increaseScore() {
+      this.score++;
+      if (this.score === 3) {
+        this.gamesWon++;
+      }
     },
   },
 });

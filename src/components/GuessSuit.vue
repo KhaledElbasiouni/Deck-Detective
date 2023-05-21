@@ -88,7 +88,7 @@ import { gameStatesStore } from "../stores/gameStates";
 import { cardStore } from "../stores/card";
 import Card from "./Card.vue";
 import Message from "./Message.vue";
-import { ref, onMounted, onBeforeMount, nextTick } from "vue";
+import { ref } from "vue";
 import Labels from "../Labels";
 
 const stateStore = gameStatesStore();
@@ -98,12 +98,20 @@ cStore.drawCard();
 let userMessage = ref("");
 let cardDrawn = ref(false);
 
+function determineMessage(score) {
+  if (score === 3) {
+    return Labels.allCorrectGuesses;
+  } else if (score > 0) {
+    return Labels.someCorrectGuesses;
+  } else {
+    return Labels.allInCorrectGuess;
+  }
+}
 function guessSuit(suitGuessed) {
   if (suitGuessed === cStore.cardSuit) {
-    userMessage = Labels.correctGuess;
-  } else {
-    userMessage = Labels.incorrectGuess;
+    stateStore.increaseScore();
   }
+  userMessage = determineMessage(stateStore.score);
   cardDrawn.value = true;
 }
 </script>

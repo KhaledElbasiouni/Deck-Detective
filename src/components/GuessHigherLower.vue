@@ -75,7 +75,7 @@ import { gameStatesStore } from "../stores/gameStates";
 import { cardStore } from "../stores/card";
 import Card from "./Card.vue";
 import Message from "./Message.vue";
-import { ref, onMounted, onBeforeMount, nextTick } from "vue";
+import { ref } from "vue";
 import Labels from "../Labels";
 
 const cardRanks = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
@@ -92,10 +92,13 @@ function compareRank(comparisonStr) {
   console.log("myCardComparison: " + myCardComparison);
   console.log("comparisonStr: " + comparisonStr);
   if (myCardComparison < 0 && comparisonStr === Labels.lower) {
+    stateStore.increaseScore();
     userMessage = Labels.correctGuess;
   } else if (myCardComparison > 0 && comparisonStr === Labels.higher) {
+    stateStore.increaseScore();
     userMessage = Labels.correctGuess;
   } else if (myCardComparison === 0 && comparisonStr === Labels.equal) {
+    stateStore.increaseScore();
     userMessage = Labels.correctGuess;
   } else {
     userMessage = Labels.incorrectGuess;

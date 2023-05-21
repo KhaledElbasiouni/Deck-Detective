@@ -123,7 +123,7 @@ import { gameStatesStore } from "../stores/gameStates";
 import { cardStore } from "../stores/card";
 import Card from "./Card.vue";
 import Message from "./Message.vue";
-import { ref, onMounted, onBeforeMount, nextTick } from "vue";
+import { ref } from "vue";
 import Labels from "../Labels";
 
 const stateStore = gameStatesStore();
@@ -136,6 +136,7 @@ let cardDrawn = ref(false);
 function pickColor(colorPicked) {
   if (cStore.cardColor === colorPicked) {
     userMessage = Labels.correctGuess;
+    stateStore.increaseScore();
   } else {
     userMessage = Labels.incorrectGuess;
   }

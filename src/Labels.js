@@ -20,6 +20,9 @@ const Labels = {
   higher: "Higher",
   lower: "Lower",
   equal: "Equal",
+  allCorrectGuesses: "Congratulations! All Your Guesses Were Correct!",
+  someCorrectGuesses: "Nice Try! You Guessed A Few Correctly, Better Luck Next Time!",
+  allInCorrectGuess: "Unfortunately, None Of Your Guesses Were Correct...",
 };
 
 export default Labels;
