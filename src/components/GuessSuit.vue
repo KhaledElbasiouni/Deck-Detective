@@ -34,7 +34,18 @@
       </svg>
     </div>
   </div>
-  <Message v-if="cardDrawn" :correctIncorrectMessage="userMessage"></Message>
+  <Message
+    v-if="cardDrawn && !displayCongrats"
+    :correctIncorrectMessage="userMessage"
+  ></Message>
+  <div v-if="displayCongrats" class="congrats-card shadow-lg card text-center">
+    <h2 class="card-header">{{ userMessage }}</h2>
+    <div class="card-body">
+      <button @click="restartGame" type="button" class="mx-3 shadow-lg btn btn-danger">
+        {{ Labels.restart }}
+      </button>
+    </div>
+  </div>
 </template>
 
 <style scoped>
@@ -81,6 +92,24 @@ path {
 .options path:not(.disabled):hover {
   transform: scale(1.2);
 }
+
+.congrats-card {
+  width: 50%;
+  padding-top: 35px;
+  padding-bottom: 35px;
+  position: absolute;
+  z-index: 4;
+}
+.card-header,
+.card {
+  border: none;
+  background-color: #fff;
+}
+button {
+  background: #c50720;
+  border: none;
+  padding: 15px;
+}
 </style>
 
 <script setup>
@@ -97,6 +126,7 @@ cStore.drawCard();
 
 let userMessage = ref("");
 let cardDrawn = ref(false);
+let displayCongrats = ref(false);
 
 function determineMessage(score) {
   if (score === 3) {
@@ -111,7 +141,14 @@ function guessSuit(suitGuessed) {
   if (suitGuessed === cStore.cardSuit) {
     stateStore.increaseScore();
   }
+  if (stateStore.score === 3) {
+    displayCongrats.value = true;
+  }
   userMessage = determineMessage(stateStore.score);
   cardDrawn.value = true;
+}
+function restartGame() {
+  stateStore.restartGame();
+  cStore.clearDeck();
 }
 </script>
