@@ -73,7 +73,6 @@ export const cardStore = defineStore("cardStore", {
           console.log(responseJSON);
           console.log("Card code:" + this.card.cards[0].code);
           this.cardImageUrl = responseJSON.cards[0].images.png;
-          // console.log(responseJSON.cards[0].suit);
           if (!this.firstCardRank) {
             this.firstCardRank = this.cardRank;
           }

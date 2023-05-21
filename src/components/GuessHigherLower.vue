@@ -89,8 +89,6 @@ let cardDrawn = ref(false);
 function compareRank(comparisonStr) {
   let myCardComparison =
     cardRanks.indexOf(cStore.cardRank) - cardRanks.indexOf(cStore.firstCardRank);
-  console.log("myCardComparison: " + myCardComparison);
-  console.log("comparisonStr: " + comparisonStr);
   if (myCardComparison < 0 && comparisonStr === Labels.lower) {
     stateStore.increaseScore();
     userMessage = Labels.correctGuess;

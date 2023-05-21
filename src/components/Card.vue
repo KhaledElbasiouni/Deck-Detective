@@ -4,7 +4,7 @@
       draggable="false"
       :src="imgSrc"
       class="card-img"
-      onerror="console.log('Error')"
+      onerror="this.style.display='none'"
     />
     <img
       v-if="!showCard"

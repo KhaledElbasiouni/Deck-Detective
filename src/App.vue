@@ -4,7 +4,7 @@
     <GameBody></GameBody>
     <Footer></Footer>
   </div>
-  <canvas v-show="showConfetti" ref="confettiCanvas" id="my-canvas"></canvas>
+  <canvas ref="confettiCanvas" id="my-canvas"></canvas>
 </template>
 
 <style scoped>
@@ -46,7 +46,8 @@ watch(score, () => {
     confetti = new ConfettiGenerator(confettiSettings);
     confetti.render();
   }
-  if (!gameStarted.value) {
+  if (!gameStarted.value && showConfetti.value) {
+    showConfetti.value = false;
     confetti.clear();
   }
 });
