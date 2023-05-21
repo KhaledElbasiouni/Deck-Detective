@@ -1,5 +1,5 @@
 const Labels = {
-  title: "CAN YOU GUESS THE CARD?",
+  title: "Think You Can Guess?",
   startState: "startState",
   guessColorState: "guessColorState",
   guessColorPrompt: "Is the next card Black or Red?",
