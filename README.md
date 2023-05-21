@@ -1,4 +1,4 @@
-# FrontendChallenge - Deck Detective
+# Deck Detective
 
 This project was made using Vue 3 using the Composition API and Pinia.
 It was created using a build setup based on Vite.
