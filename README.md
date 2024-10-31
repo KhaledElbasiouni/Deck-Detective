@@ -1,7 +1,7 @@
 # Deck Detective
 
-This project was made using Vue 3 using the Composition API and Pinia.
-It was created using a build setup based on Vite.
+This project was made using Vue 3 using the Composition API and Pinia. It was created using a build setup based on Vite. The random cards were retrieved using the [Deck of Cards API](https://www.deckofcardsapi.com/).
+
 
 The aim of the project was to meet all the requirements set by the [OutStem Front-end Challenge](https://github.com/AES-Outreach/Fall-2023-Coop-Interviews).
 
